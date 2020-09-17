@@ -50,5 +50,5 @@ jarque.bera.test(residuals(ar[[5]]))
 LjungBox(               
          ar[[5]],       
                 lags = 1:10)
-# Because the residuals are not normally distributed, we perform ACF/PACF until the residuals are otmally distributed.
+# Because the residuals are not normally distributed, we perform ACF/PACF until the residuals are optimally distributed.
 # After that we can forecast based on the model.
