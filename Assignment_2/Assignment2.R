@@ -149,7 +149,7 @@ var.result <- VAR(var.data,
 
 #4. Perform Ljung-Box and Jarque-Bera tests. What are the conclusions?
 # Perform multivariate Ljung Box test
-serial.test(var.result) # We cannot reject the Null of no autocorrelation -> good!
+serial.test(var.result) # We cannot reject the null of no autocorrelation -> good!
 
 #Perform multivariate Jarque-Bera Test
 normality.test(var.result)$jb.mul$JB # We cannot reject the null of normally distributed residuals -> good!
@@ -163,14 +163,13 @@ roots(var.result) # The eigenvalues are in the unit root and the model is stable
 
 causality(var.result,
           cause = 'Chicken')$Granger
-# We cannot reject the null hypothesis, hence Chicken does not Granger-cause Egg
+# We cannot reject the null hypothesis, hence chicken does not Granger-cause Egg
 
 causality(var.result, 
           cause ='Egg')$Granger
-# We reject the Null hypothesis: The Egg Granger-cause the Chicken. Hence, eggs have a predictive power to chicken.
+# We reject the null hypothesis: The egg Granger-cause the chicken. Hence, eggs have a predictive power to chicken.
 
 #6. So which was first, the chicken or the egg?
 
-# This is obviously a trick question because the Granger's causality. 
 # Granger-causality has nothing to do with causality but is about whether one variable can be used to predict another.
 # does not infer anything about causality. Hence, we don't know who was first
